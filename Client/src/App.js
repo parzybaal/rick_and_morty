@@ -13,6 +13,17 @@ const API_KEY = "547c8e7fa45e.e6fe7fed104f1e6efe18"; */
 function App() {
    const [characters, setCharacters] = React.useState([]);
 
+   const login = (userData) => {
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+         const { access } = data;
+         setAccess(access);
+         access && navigate('/home');
+      });
+   }
+
+
    function onSearch(id) {
       axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
          if (data.name) {
