@@ -24,7 +24,7 @@ function Card({id, name, species, gender, image, onClose, addFav, removeFav, myF
             setIsfav(true);
          }
       });
-   }, [myFavorites]);
+   }, [id, myFavorites]);
 
 
    return (
@@ -55,6 +55,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(
-   null,
+   mapStateToProps,
    mapDispatchToProps
    )(Card);
