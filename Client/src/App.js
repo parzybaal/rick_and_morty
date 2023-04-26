@@ -11,8 +11,6 @@ import Favorites from './components/Favorites/Favorites';
 
 /* const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
 const API_KEY = "547c8e7fa45e.e6fe7fed104f1e6efe18"; */
-const email = "juan@gmail.com"
-const password = "1503anashe"
 const URL = 'http://localhost:3001/rickandmorty/login';
 
 function App() {
@@ -22,9 +20,11 @@ function App() {
    const [access, setAccess] = useState(false)
 
    const login = async (userData) => {
+      console.log(userData)
       try {
          const { email, password } = userData;
-         const {data} = await axios(URL + `?email=${email}&password=${password}`)
+         const {data} = await axios(`${URL}?email=${email}&password=${password}`)
+         
          const { access } = data;
 
          setAccess(access);
