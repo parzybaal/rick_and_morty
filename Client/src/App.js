@@ -20,7 +20,6 @@ function App() {
    const [access, setAccess] = useState(false)
 
    const login = async (userData) => {
-      console.log(userData)
       try {
          const { email, password } = userData;
          const {data} = await axios(`${URL}?email=${email}&password=${password}`)

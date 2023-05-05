@@ -38,4 +38,12 @@ export const addFav = (character) => {
     };
  };
 
+ export const filterCards = (gender) => {
+   return { type: FILTER, payload: gender }
+}
+
+export const orderCards = (order) => {
+   return { type: ORDER, payload: order }
+}
+
  

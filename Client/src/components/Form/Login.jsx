@@ -4,7 +4,6 @@ import validation from "../Validation/validation"
 const Form = ({login}) => {
 
     const [error, setError] = useState({})
-
     const [userData, setUserData] = useState({
         email: "",
         password: ""
